@@ -3,8 +3,11 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Install openclaw globally
-RUN npm install -g openclaw
+# Create package.json with openclaw as dependency
+RUN echo '{"name":"openclaw-bot","version":"1.0.0","dependencies":{"openclaw":"latest"}}' > package.json
+
+# Install openclaw and its dependencies
+RUN npm install
 
 # Copy configuration
 COPY openclaw.json /root/.openclaw/openclaw.json
