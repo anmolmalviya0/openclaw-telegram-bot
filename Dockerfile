@@ -18,7 +18,7 @@ COPY openclaw.json /root/.openclaw/openclaw.json
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD npx openclaw health || exit 1
+  CMD /app/node_modules/.bin/openclaw health || exit 1
 
 # Start the gateway
-CMD ["npx", "openclaw", "gateway", "start"]
+CMD ["/app/node_modules/.bin/openclaw", "gateway", "start"]
