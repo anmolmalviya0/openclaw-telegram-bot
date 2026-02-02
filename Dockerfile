@@ -12,7 +12,8 @@ RUN echo '{"name":"openclaw-bot","version":"1.0.0","dependencies":{"openclaw":"l
 # Install openclaw and its dependencies
 RUN npm install
 
-# Copy configuration
+# Create configuration directory and copy config
+RUN mkdir -p /root/.openclaw
 COPY openclaw.json /root/.openclaw/openclaw.json
 
 # Health check
