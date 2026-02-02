@@ -11,7 +11,7 @@ COPY openclaw.json /root/.openclaw/openclaw.json
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD openclaw health || exit 1
+  CMD npx openclaw health || exit 1
 
 # Start the gateway
-CMD ["openclaw", "gateway", "start"]
+CMD ["npx", "openclaw", "gateway", "start"]
