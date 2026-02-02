@@ -3,6 +3,9 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+# Install git (required for npm dependencies)
+RUN apk add --no-cache git
+
 # Create package.json with openclaw as dependency
 RUN echo '{"name":"openclaw-bot","version":"1.0.0","dependencies":{"openclaw":"latest"}}' > package.json
 
