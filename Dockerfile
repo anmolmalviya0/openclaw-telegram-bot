@@ -1,5 +1,5 @@
 # Railway Free Tier Deployment - 24/7 Telegram Bot
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
